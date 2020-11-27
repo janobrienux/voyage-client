@@ -1,9 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 import VoyagesSplashPage from './components/voyage/Voyages/VoyagesSplashPage';
+import { useState } from 'react';
 
 
 function App() {
+  const [token, setToken] = useState(undefined)
+
+  const viewConductor =()=>{
+    return token === undefined ? 'Ready to Voyage?' : <VoyagesSplashPage />
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -25,7 +32,8 @@ function App() {
         </a>
       </header>
       <div className='JakesTestDiv'>
-        <VoyagesSplashPage />
+        {/* <VoyagesSplashPage /> */}
+        {viewConductor()}
       </div>
     </div>
   );
