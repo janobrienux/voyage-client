@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import AllVoyages from './components/voyage/Voyages/GetVoyages/AllVoyages'
+import VoyagesSplashPage from './components/voyage/Voyages/VoyagesSplashPage';
 
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
         </a>
       </header>
       <div className='JakesTestDiv'>
-        <AllVoyages />
+        <VoyagesSplashPage />
       </div>
     </div>
   );

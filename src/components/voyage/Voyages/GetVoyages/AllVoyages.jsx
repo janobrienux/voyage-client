@@ -20,34 +20,6 @@ const AllVoyages = () => {
         fetchResults();
     }
 
-    // const testVoyage = [
-    //     {
-    //         id: 1,
-    //         location: 'colorado',
-    //         season: 'winter',
-    //         stay: 'breckenridge hotel',
-    //         food: 'beer and pizza',
-    //         rating: 5
-    //     },
-    //     {
-    //         id: 2,
-    //         location: 'spain',
-    //         season: 'summer',
-    //         stay: 'hotel',
-    //         food: 'piaya',
-    //         rating: 4
-    //     },
-    //     {
-    //         id: 3,
-    //         location: 'kokamo',
-    //         season: 'anytime',
-    //         stay: 'with the beach boys',
-    //         food: 'pina colada ',
-    //         rating: 2
-
-    //     }
-    // ]
-
     return (
         <div>
             <div>
