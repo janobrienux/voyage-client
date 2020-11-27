@@ -16,10 +16,10 @@ function App() {
     <Auth />
     </div>
 
-     <div className='JakesTestDiv'>
-        {/* <VoyagesSplashPage /> */}
-        {viewConductor()}
-      </div>
+    //  <div className='JakesTestDiv'>
+    //     {/* <VoyagesSplashPage /> */}
+    //     {viewConductor()}
+    // </div>
   );
 }
 
