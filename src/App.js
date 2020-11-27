@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import AllVoyages from './components/voyage/Voyages/GetVoyages/AllVoyages'
+
 
 function App() {
   return (
@@ -22,6 +24,9 @@ function App() {
           Learn React
         </a>
       </header>
+      <div className='JakesTestDiv'>
+        <AllVoyages />
+      </div>
     </div>
   );
 }
