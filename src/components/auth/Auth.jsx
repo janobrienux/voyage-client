@@ -11,7 +11,7 @@ const Auth = (props) => {
     // stops browser from refreshing when form is submitted
     event.preventDefault();
     // sets up value of the url depending on if logging in or signing up
-    const url = login ? "http://localhost:3004/user/login" : "http://localhost:3004/user/register";
+    const url = login ? "http://localhost:3050/user/login" : "http://localhost:3050/user/register";
     // sets up value of the data we are going to send to the enpoint of the url nased on login value
     const bodyObj = login
       ? {
@@ -19,9 +19,12 @@ const Auth = (props) => {
           password: password,
         }
       : {
+        user:{
+
           userName: userName,
           email: email,
           password: password,
+        }
         };
 
     fetch(url, {
