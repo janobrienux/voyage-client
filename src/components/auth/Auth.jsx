@@ -11,15 +11,20 @@ const Auth = (props) => {
     // stops browser from refreshing when form is submitted
     event.preventDefault();
     // sets up value of the url depending on if logging in or signing up
-    const url = login ? "http://localhost:3004/user/login" : "http://localhost:3004/user/register";
+    const url = login ? "http://localhost:3050/user/login" : "http://localhost:3050/user/register";
     // sets up value of the data we are going to send to the enpoint of the url nased on login value
-    const bodyObj = login ? {
+    const bodyObj = login
+      ? {
           email: email,
           password: password,
-        } : {
-            userName: userName,
-            email: email,
-            password: password,
+        }
+      : {
+        user:{
+
+          userName: userName,
+          email: email,
+          password: password,
+        }
         };
 
     fetch(url, {
@@ -30,7 +35,7 @@ const Auth = (props) => {
       body: JSON.stringify(bodyObj),
     })
       .then((res) => res.json())
-      .then(data => console.log(data));
+      .then((data) => console.log(data));
   };
 
   const title = () => {
@@ -48,7 +53,7 @@ const Auth = (props) => {
 
   const signupFields = () => {
     return !login ? (
-      <div>
+      <div className="loginForm">
         <label htmlFor="userName">Username</label>
         <br />
         <input type="text" id="userName" value={userName} onChange={(event) => setUserName(event.target.value)} />
@@ -57,8 +62,9 @@ const Auth = (props) => {
   };
 
   return (
-    <div>
+    <div className="form-container">
       <form onSubmit={handleSubmit}>
+        <div className="form-img">
         <h1>{title()}</h1>
         {signupFields()}
         <label htmlFor="email">Email:</label>
@@ -87,8 +93,10 @@ const Auth = (props) => {
         <br />
         <button onClick={loginToggle}>Login/Signup Toggle</button>
         <br />
-        <button type="submit">Submit User Data</button>
+        <button type="submit">Sign In</button>
+        </div>
       </form>
+
     </div>
   );
 };

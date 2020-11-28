@@ -5,7 +5,7 @@ const AllVoyages = () => {
     const [voyages, setVoyages] = useState([])
 
     const fetchResults =()=>{
-        fetch('http://localhost:3010/voyage/getlogs',{
+        fetch('http://localhost:3050/voyage/getlogs',{
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
