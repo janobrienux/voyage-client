@@ -1,7 +1,7 @@
+import {useState} from 'react';
 import './App.css';
+// import Auth from './components/auth/Auth'
 import VoyagesSplashPage from './components/voyage/Voyages/VoyagesSplashPage';
-import { useState } from 'react';
-
 
 function App() {
   const [token, setToken] = useState(undefined)
@@ -13,11 +13,15 @@ function App() {
   }
 
   return (
-
-      <div className='JakesTestDiv'>
+    <div className="main">
+      <div className='VoyageSplashPage'>
          <VoyagesSplashPage /> 
-        {viewConductor()}
+          {viewConductor()}
       </div>
+    <div className="App">
+     <Auth />
+     </div>
+  </div>
   );
 }
 
