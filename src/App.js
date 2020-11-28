@@ -5,21 +5,23 @@ import VoyagesSplashPage from './components/voyage/Voyages/VoyagesSplashPage';
 
 function App() {
   const [token, setToken] = useState(undefined)
+  // const [token, setToken] = useState('')
+
 
   const viewConductor =()=>{
     return token === undefined ? 'Ready to Voyage?' : <VoyagesSplashPage />
   }
 
   return (
-
-    // <div className="App">
-    // <Auth />
-    // </div>
-
-     <div className='JakesTestDiv'>
-        <VoyagesSplashPage />
-        {viewConductor()}
-    </div>
+    <div className="main">
+      <div className='VoyageSplashPage'>
+         <VoyagesSplashPage /> 
+          {viewConductor()}
+      </div>
+    <div className="App">
+     <Auth />
+     </div>
+  </div>
   );
 }
 

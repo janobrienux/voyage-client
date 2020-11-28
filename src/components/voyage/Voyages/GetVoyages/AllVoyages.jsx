@@ -1,8 +1,9 @@
 import {useState} from 'react';
 import Voyage from './Voyage/Voyage';
 
+
 const AllVoyages = () => {
-    const [voyages, setVoyages] = useState([])
+    const [voyages, setVoyages] = useState([]);
 
     const fetchResults =()=>{
         fetch('http://localhost:3050/voyage/getlogs',{
