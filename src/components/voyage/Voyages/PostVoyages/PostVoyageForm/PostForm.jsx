@@ -10,7 +10,7 @@ const PostForm =()=>{
 
     const handleSubmit =(e)=>{
         e.preventDefault();
-        fetch('http://localhost:3010/voyage/createlog',{
+        fetch('http://localhost:3050/voyage/createlog',{
             method: 'POST',
             body: JSON.stringify({location,season,stay,food,rating}),
             headers: new Headers({
