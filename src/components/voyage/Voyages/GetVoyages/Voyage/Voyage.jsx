@@ -18,4 +18,4 @@ const Voyage = (props) => {
     )
 };
 
-export default Voyage
+export default Voyage;

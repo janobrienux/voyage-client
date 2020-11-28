@@ -9,8 +9,8 @@ const AllVoyages = () => {
         fetch('http://localhost:3050/voyage/getlogs',{
             method: 'GET',
             headers: {
-                'Content-Type': 'application/json'
-                // 'Authorization': props.token
+                'Content-Type': 'application/json',
+                'Authorization': props.token
             }
         })
         .then(res => res.json())
