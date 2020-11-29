@@ -5,11 +5,11 @@ import VoyagesSplashPage from './components/voyage/Voyages/VoyagesSplashPage';
 
 function App() {
   const [token, setToken] = useState(undefined)
-
+  console.log(token)
 
   const viewConductor =()=>{
                                               // ******* updateToken Porp added!!!! *******
-    return token === undefined ? <div className="App"><Auth updateToken={updateToken} /></div> : <VoyagesSplashPage />
+    return token === undefined ? <div className="App"><Auth updateToken={updateToken} /></div> : <VoyagesSplashPage token={token} />
   }
 
   const updateToken =(newToken)=>{

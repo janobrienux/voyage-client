@@ -1,14 +1,16 @@
 import React from 'react';
 import PostVoyage from './PostVoyages/PostVoyage';
 import AllVoyages from './GetVoyages/AllVoyages';
-import EditVoyages from './EditVoyages/EditVoyages';
+// import EditVoyages from './EditVoyages/EditVoyages';
 
-const VoyagesSplashPage =()=>{
+const VoyagesSplashPage =(props)=>{
+    console.log("VoyagesSplashPage Token:", props.token)
+
     return(
         <div>
-            <PostVoyage />
-            <AllVoyages />
-            <EditVoyages />
+            <PostVoyage token={props.token} />
+            <AllVoyages token={props.token} />
+            {/* <EditVoyages /> */}
         </div>
     )
 }
