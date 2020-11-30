@@ -3,10 +3,11 @@ import {Container, Row, Col} from 'reactstrap';
 import PostVoyage from './PostVoyages/PostVoyage';
 import VoyageTable from './VoyageTable';
 import VoyageEdit from './EditVoyages/VoyageEdit';
-// import AllVoyages from './GetVoyages/AllVoyages';
+import AllVoyages from './GetVoyages/AllVoyages';
 
 
 const VoyagesSplashPage = (props) => {
+    // console.log("VoyagesSplashPage Token:", props.token)
     const [voyages, setVoyages] = useState([]);
     const [updateActive, setUpdateActive] = useState(false);
     const [voyageToUpdate, setVoyageToUpdate] = useState({});
@@ -47,7 +48,7 @@ const VoyagesSplashPage = (props) => {
             <Container>
                 <Row>
                     <Col md="3">
-                        <PostVoyage fetchVoyages={fetchVoyages} token={props.token}/>
+                      {/*<PostVoyage fetchVoyages={fetchVoyages} token={props.token}/>*/}
                     </Col>
                     <Col md="9">
                         <VoyageTable voyages={voyages} editUpdateVoyage={editUpdateVoyage} 
@@ -55,13 +56,24 @@ const VoyagesSplashPage = (props) => {
                     </Col>
                     {updateActive ? <VoyageEdit voyageToUpdate={voyageToUpdate}
                     updateOff={updateOff} token={props.token} fetchVoyages={fetchVoyages}/> : <></>}
-                    {/* <Col md="9">
-                        <AllVoyages voyages={voyages} editUpdateVoyage={editUpdateVoyage} updateOn={updateOn} fetchVoyages={fetchVoyages}
-                        token={props.token}/>
-                    </Col> */}
+                    <Col md="9">
+                      {/*<AllVoyages voyages={voyages} editUpdateVoyage={editUpdateVoyage} updateOn={updateOn} fetchVoyages={fetchVoyages}
+                        token={props.token}/>*/}
+                    </Col>
                 </Row>
             </Container>
     );
 };
+
+const VoyagesSplashPage =(props)=>{
+    
+    return(
+        <div>
+            <PostVoyage token={props.token} />
+            <AllVoyages token={props.token} />
+            {/* <EditVoyages /> */}
+        </div>
+    )
+}
 
 export default VoyagesSplashPage;

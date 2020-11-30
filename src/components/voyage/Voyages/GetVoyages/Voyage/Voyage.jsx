@@ -1,8 +1,8 @@
 const Voyage = (props) => {
-    console.log(props.voyages)
+    // console.log('Voyage props.voyages: ', props.voyages.logs)
 
     return (
-            props.voyages.map((voyage, index) => {
+            props.voyages.logs.map((voyage, index) => {
                 return (
                     <div key={index}>
                         <div>
