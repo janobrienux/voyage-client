@@ -4,7 +4,6 @@ import Auth from './components/auth/Auth'
 import VoyagesSplashPage from './components/voyage/Voyages/VoyagesSplashPage';
 
 function App() {
-  
   const [token, setToken] = useState(undefined)
   // const [token, setToken] = useState('')
   console.log(token)
