@@ -17,7 +17,7 @@ const VoyageEdit = (props) => {
                 'Content-Type': 'application/json',
                 'Authorization': props.token
             })
-        }) .then((res => {
+        }).then((res => {
             props.fetchVoyages();
             props.updateOff();
         }))
