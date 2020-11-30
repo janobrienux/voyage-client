@@ -2,16 +2,17 @@ import {useState} from 'react';
 import Voyage from './Voyage/Voyage';
 
 
-const AllVoyages = () => {
+const AllVoyages = (props) => {
     const [voyages, setVoyages] = useState([]);
+    console.log('AllVoyages Token:', props.token)
 
     const fetchResults =()=>{
         fetch('http://localhost:3050/voyage/getlogs',{
             method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-                // 'Authorization': props.token
-            }
+            headers: new Headers ({
+                'Content-Type': 'application/json',
+                'Authorization': props.token
+            })
         })
         .then(res => res.json())
         .then(data => setVoyages(data))
