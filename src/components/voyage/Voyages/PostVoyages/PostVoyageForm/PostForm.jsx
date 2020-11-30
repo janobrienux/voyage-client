@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Button, Form, FormGroup, Label, Input} from 'reactstrap';
+// import TestInput from './Test';
 
 const PostForm =(props)=>{
     const [location, setLocation] = useState('');
@@ -34,6 +35,7 @@ const PostForm =(props)=>{
                 <FormGroup>
                     <Label htmlFor='location'>Location</Label>
                     <Input name='location' value={location} onChange={(e)=>setLocation(e.target.value)} />
+                    {/* <TestInput name='location' value={location} onChange={(e)=>setLocation(e.target.value)} /> */}
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor='season'>Season</Label>
@@ -45,9 +47,10 @@ const PostForm =(props)=>{
                         <option value='Spring'>Spring</option>
                     </Input>
                 </FormGroup>
-                <FormGroup>
+                <FormGroup tag='fieldset'>
                     <Label htmlFor='stay'>Stay</Label>
                     <Input name='stay' value={stay} onChange={(e)=>setStay(e.target.value)} />
+                    {/* <Label><Input name='stay' value={'testInput'} type='checkbox' onChange={(e)=>setStay(stay +', '+ e.target.value)} />test Checkbox</Label> */}
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor='food'>Food</Label>
