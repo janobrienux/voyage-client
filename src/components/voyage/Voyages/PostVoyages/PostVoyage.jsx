@@ -3,8 +3,9 @@ import PostForm from './PostVoyageForm/PostForm';
 import {Button, Modal, ModalHeader, ModalBody} from 'reactstrap';
 
 
-const PostVoyage =()=>{
+const PostVoyage =(props)=>{
     const [modal, setModal] = useState(false);
+    // console.log("PostVoyage Token:", props.token)
 
     const toggle =()=>setModal(!modal);
 
@@ -14,8 +15,8 @@ const PostVoyage =()=>{
             <Modal isOpen={modal} toggle={toggle}>
                 <ModalBody>
                     <ModalHeader toggle={toggle}></ModalHeader>
-                    <h1 toggle ={toggle}>Add Voyage</h1>
-                    <PostForm />
+                    <h1>Add Voyage</h1>
+                    <PostForm token={props.token} />
                 </ModalBody>
             </Modal>
         </div>

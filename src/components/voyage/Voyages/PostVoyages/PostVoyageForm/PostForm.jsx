@@ -1,21 +1,22 @@
 import React, {useState} from 'react';
 import {Button, Form, FormGroup, Label, Input} from 'reactstrap';
 
-const PostForm =()=>{
+const PostForm =(props)=>{
     const [location, setLocation] = useState('');
     const [season, setSeason] = useState('');
     const [stay, setStay] = useState('');
     const [food, setFood] = useState('');
     const [rating, setRating] = useState('');
+    // console.log("PostFrom Token:", props.token)
 
     const handleSubmit =(e)=>{
         e.preventDefault();
         fetch('http://localhost:3050/voyage/createlog',{
             method: 'POST',
-            body: JSON.stringify({location,season,stay,food,rating}),
+            body: JSON.stringify({location, season, stay, food, rating}),
             headers: new Headers({
-                'Content-Type': 'application/json'
-                // 'Athorization': props.token
+                'Content-Type': 'application/json',
+                'Authorization': props.token
             })
         }).then((res)=> res.json())
         .then((postVoyage)=>{
