@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./style.css";
 
 const Auth = (props) => {
+  console.log(props)
+
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -35,7 +37,8 @@ const Auth = (props) => {
       body: JSON.stringify(bodyObj),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+                    //**** CHANGED TO TERNARY TO SET TOKEN!!!! */
+      .then((data) => login ? props.updateToken(data.token) : undefined);
   };
 
   const title = () => {
