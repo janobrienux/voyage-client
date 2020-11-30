@@ -8,7 +8,7 @@ function App() {
   const [token, setToken] = useState('')
 
 
-  const viewConductor =()=>{
+  const viewConductor = () => {
     return token === undefined ? 'Ready to Voyage?' : <VoyagesSplashPage />
   }
 
