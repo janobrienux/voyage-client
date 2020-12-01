@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Button, Form, FormGroup, Label, Input} from 'reactstrap';
-// import TestInput from './Test';
+// import TestInput from './Test'
 
 const PostForm =(props)=>{
     const [location, setLocation] = useState('');
