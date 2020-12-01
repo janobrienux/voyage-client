@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./style.css";
+import logo from '../../assets/logo.png'
 
 const Auth = (props) => {
   console.log(props)
@@ -68,6 +69,7 @@ const Auth = (props) => {
     <div className="form-container">
       <form onSubmit={handleSubmit}>
         <div className="form-img">
+          <img className="element" src={logo} alt="voyage-logo" />
         <h1>{title()}</h1>
         {signupFields()}
         <label htmlFor="email">Email:</label>
