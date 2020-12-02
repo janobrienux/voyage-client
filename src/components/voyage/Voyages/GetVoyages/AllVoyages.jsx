@@ -22,11 +22,17 @@ const AllVoyages = (props) => {
         fetchResults();
     }
 
+    const closeVoyages =(e)=>{
+        e.preventDefault();
+        setVoyages([])
+    }
+
     return (
         <div>
             <div>
                 <button onClick={(e)=> voyageBtn(e)}>Voyage!</button>
-                {voyages.length === 0 ? null : <Voyage voyages={voyages} token={props.token} />}
+                {voyages.length === 0 ? null : <><Voyage voyages={voyages} token={props.token} /><button onClick={(e)=>closeVoyages(e)}>Close Voyages</button></>}
+                
             </div>
         </div>
     );
