@@ -1,9 +1,11 @@
 import {useState} from 'react';
-import Voyage from './Voyage/Voyage';
-
+import Voyage from './Voyage';
+import EditForm from './EditForm';
 
 const AllVoyages = (props) => {
     const [voyages, setVoyages] = useState([]);
+    const [updateActive, setUpdateActive] = useState(false);
+    const [voyageToUpdate, setVoyageToUpdate] = useState({});
     console.log('AllVoyages Token:', props.token)
 
     const fetchResults =()=>{
@@ -22,11 +24,26 @@ const AllVoyages = (props) => {
         fetchResults();
     }
 
+    const editUpdateVoyage = (voyages) => {
+        setVoyageToUpdate(voyages);
+        // console.log(log);
+    }
+
+    const updateOn = () => {
+        setUpdateActive(true);
+    }
+
+    const updateOff = () => {
+        setUpdateActive(false);
+    }
+
+
     return (
         <div>
             <div>
                 <button onClick={(e)=> voyageBtn(e)}>Voyage!</button>
-                {voyages.length === 0 ? null : <Voyage voyages={voyages} />}
+                {voyages.length === 0 ? null : <Voyage voyages={voyages} editUpdateVoyage={editUpdateVoyage} updateOn={updateOn} updateOff={updateOff} fetchResults={fetchResults} token={props.token} />}
+                {updateActive ? <EditForm voyages={voyages} voyageToUpdate={voyageToUpdate} token={props.token} updateOff={updateOff} fetchResults={fetchResults} /> : <></>}
             </div>
         </div>
     );
