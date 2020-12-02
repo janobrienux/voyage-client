@@ -10,7 +10,7 @@ const PostSearchVoyage = (props) => {
     const [season, setSeason] = useState('');
     const [stay, setStay] = useState('');
     const [food, setFood] = useState('');
-    const [rating, setRating] = useState(undefined);
+    const [rating, setRating] = useState(3)
     const [lat, setLat] = useState('');
     const [lon, setLon] = useState('');
     // const [results, setResults] = useState([]);
@@ -57,7 +57,7 @@ const PostSearchVoyage = (props) => {
                 setSeason('');
                 setStay('');
                 setFood('');
-                setRating(undefined);
+                setRating(3);
             })
     }
 
