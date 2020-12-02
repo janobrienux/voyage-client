@@ -1,5 +1,6 @@
+import React from 'react';
+
 const Voyage = (props) => {
-    // console.log('Voyage props.voyages: ', props.voyages.logs)
 
     return (
             props.voyages.logs.map((voyage, index) => {

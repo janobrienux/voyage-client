@@ -1,10 +1,10 @@
-import {useState} from 'react';
-import Voyage from './Voyage/Voyage';
+import React, {useState} from 'react';
+import Voyage from './Voyage';
 
 
 const AllVoyages = (props) => {
     const [voyages, setVoyages] = useState([]);
-    console.log('AllVoyages Token:', props.token)
+    // console.log('AllVoyages Token:', props.token)
 
     const fetchResults =()=>{
         fetch('http://localhost:3050/voyage/getlogs',{
@@ -22,11 +22,17 @@ const AllVoyages = (props) => {
         fetchResults();
     }
 
+    const closeVoyages =(e)=>{
+        e.preventDefault();
+        setVoyages([])
+    }
+
     return (
         <div>
             <div>
                 <button onClick={(e)=> voyageBtn(e)}>Voyage!</button>
-                {voyages.length === 0 ? null : <Voyage voyages={voyages} />}
+                {voyages.length === 0 ? null : <><Voyage voyages={voyages} token={props.token} /><button onClick={(e)=>closeVoyages(e)}>Close Voyages</button></>}
+                
             </div>
         </div>
     );
