@@ -4,6 +4,7 @@ import PostVoyage from './PostVoyages/PostVoyage';
 import VoyageTable from './VoyageTable';
 import VoyageEdit from './EditVoyages/VoyageEdit';
 import AllVoyages from './GetVoyages/AllVoyages';
+//import EditVoyages from './EditVoyages/EditVoyages';
 
 
 const VoyagesSplashPage = (props) => {
@@ -67,7 +68,7 @@ const VoyagesSplashPage = (props) => {
 };
 
 // const VoyagesSplashPage =(props)=>{
-    
+  
 //     return(
 //         <div>
 //             <PostVoyage token={props.token} />
