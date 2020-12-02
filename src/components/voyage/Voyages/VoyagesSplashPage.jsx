@@ -19,7 +19,7 @@ const VoyagesSplashPage = (props) => {
     const displayVoyageForm =()=>{
         return voyageForm === undefined ?
             (<Button onClick={(e)=>postVoyageBtnClick(e)} >Create a Voyage!</Button>)
-                : (<><PostSearchVoyage token={props.token} /><Button onClick={(e)=>closeForm(e)}>Close Form</Button></>)
+                : (<><PostSearchVoyage token={props.token} closeForm={closeForm} /><Button onClick={(e)=>closeForm(e)}>Close Form</Button></>)
     }
 
     return (

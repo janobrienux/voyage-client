@@ -40,6 +40,11 @@ const PostSearchVoyage = (props) => {
         e.preventDefault();
         locationResults();
     }
+    
+    const cancelVoyage =(e)=>{
+        e.preventDefault()
+        setLat('')
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -53,19 +58,11 @@ const PostSearchVoyage = (props) => {
         }).then((res) => res.json())
             .then((postVoyage) => {
                 console.log(postVoyage);
-                setLocation('');
-                setSeason('');
-                setStay('');
-                setFood('');
-                setRating(3);
+                props.closeForm(e)
             })
     }
 
-    const cancelVoyage =(e)=>{
-        e.preventDefault()
-        setLat('')
-    }
-
+    
     if (lat === '') {
         return (
             <div>
