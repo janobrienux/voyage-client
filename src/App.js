@@ -8,8 +8,8 @@ function App() {
   // const [token, setToken] = useState('')
   console.log(token)
 
-  const viewConductor =()=>{
-                                              // ******* updateToken Porp added!!!! *******
+  const viewConductor = () => {
+                                              // ******* updateToken Prop added!!!! *******
     return token === undefined ? <div className="App"><Auth updateToken={updateToken} /></div> : <VoyagesSplashPage token={token} />
   }
 
