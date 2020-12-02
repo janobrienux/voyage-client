@@ -6,6 +6,20 @@
 //     const [modal, setModal] = useState(false);
 
 //     const toggle =()=>setModal(!modal);
+    // const voyageUpdate = (event, voyage) => {
+    //     event.preventDefault();
+    //     fetch(`http://localhost:3050/voyage/${props.voyageToUpdate.id}`, {
+    //         method: 'PUT',
+    //         body: JSON.stringify({location: editLocation, season: editSeason, stay: editStay, food: editFood, rating: editRating}),
+    //         headers: new Headers({
+    //             'Content-Type': 'application/json',
+    //             'Authorization': props.token
+    //         })
+    //     }).then((res => {
+    //         props.fetchVoyages();
+    //         props.updateOff();
+    //     }))
+    // }
 
 //     return(
 //         <div>

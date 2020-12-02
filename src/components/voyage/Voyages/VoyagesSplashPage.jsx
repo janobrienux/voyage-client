@@ -1,12 +1,31 @@
-import PostVoyage from './PostVoyages/PostVoyage';
+import React, { useState } from 'react';
 import AllVoyages from './GetVoyages/AllVoyages';
+import PostSearchVoyage from './PostVoyages/PostSearchVoyage';
+import {Button} from 'reactstrap'
 
 const VoyagesSplashPage = (props) => {
+    const [voyageForm, setVoyageForm] = useState(undefined)
 
-    return(
+    const postVoyageBtnClick = (e) => {
+        e.preventDefault()
+        setVoyageForm('')
+    }
+
+    const closeForm =(e)=> {
+        e.preventDefault()
+        setVoyageForm(undefined)
+    }
+
+    const displayVoyageForm =()=>{
+        return voyageForm === undefined ?
+            (<Button onClick={(e)=>postVoyageBtnClick(e)} >Create a Voyage!</Button>)
+                : (<><PostSearchVoyage token={props.token} /><Button onClick={(e)=>closeForm(e)}>Close Form</Button></>)
+    }
+
+    return (
         <div>
-            <PostVoyage token={props.token} />
             <AllVoyages token={props.token} />
+            {displayVoyageForm()}
         </div>
     )
 }

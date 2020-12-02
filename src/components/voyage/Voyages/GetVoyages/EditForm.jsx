@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody} from 'reactstrap';
+import {Button, Form, FormGroup, Label, Input /*Modal, ModalHeader, ModalBody*/} from 'reactstrap';
 
 
 const EditForm = (props) => {

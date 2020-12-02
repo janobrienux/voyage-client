@@ -1,0 +1,30 @@
+.restaurantList {
+    display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+}
+
+.recommendResults {
+    width: 7em;
+    height: 7em;
+    background: red;
+    margin: 5px 5px 5px 5px;
+    display: flex;
+    justify-content: center;
+        text-align: center;
+        align-items: center;;
+}
+
+.listGroup {
+    background-color: gray;
+    height: 7em;
+    width: 7em;
+    display: flex;
+        justify-content: center;
+        flex-direction: column;
+    padding: 0;
+}
+
+.resaurantName {
+    margin: 0;
+}
