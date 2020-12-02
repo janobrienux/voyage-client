@@ -15,7 +15,7 @@ const PostSearchVoyage = (props) => {
     const [lon, setLon] = useState('');
     // const [results, setResults] = useState([]);
     // console.log('search: ', search)
-    console.log('location: ', location)
+    // console.log('location: ', location)
     // console.log(lat)
     // console.log(lon)
 
