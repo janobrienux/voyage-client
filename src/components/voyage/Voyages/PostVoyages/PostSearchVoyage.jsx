@@ -61,6 +61,11 @@ const PostSearchVoyage = (props) => {
             })
     }
 
+    const cancelVoyage =(e)=>{
+        e.preventDefault()
+        setLat('')
+    }
+
     if (lat === '') {
         return (
             <div>
@@ -103,6 +108,7 @@ const PostSearchVoyage = (props) => {
                         <input type='radio' name='rating' value={5} onChange={(e) => setRating(e.target.value)} />
                         </fieldset> */}
                         <button type='submit' >Submit Voyage</button>
+                        <button onClick={(e)=>cancelVoyage(e)}>Cancel Voyage</button>
                     </form>
                 </div>
             </div>
