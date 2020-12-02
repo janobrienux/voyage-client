@@ -79,17 +79,29 @@ const PostSearchVoyage = (props) => {
                     <button onClick={(e) => searchLocation(e)}>Change Location</button>
                 </div>
                 <div>
-                    <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}>
                         <h2>Voyage: {location}</h2>
                         <label htmlFor='season'>Season</label>
-                        <input name='season' value={season} onChange={(e) => setSeason(e.target.value)} />
+                        <select name='season' value={season} onChange={(e) => setSeason(e.target.value)}>
+                            <option value=''></option>
+                            <option value='summer'>Summer</option>
+                            <option value='fall'>Fall</option>
+                            <option value='winter'>Winter</option>
+                            <option value='spring'>Spring</option>
+                        </select>
                         <label htmlFor='stay'>Stay</label>
                         <input name='stay' value={stay} onChange={(e) => setStay(e.target.value)} />
                         <label htmlFor='food'>Food</label>
                         <input name='food' value={food} onChange={(e) => setFood(e.target.value)} />
                         <SearchFood lat={lat} lon={lon} name='food' />
-                        <label htmlFor='rating'>Rating</label>
-                        <input name='rating' value={rating} onChange={(e) => setRating(e.target.value)} />
+                        {/* <fieldset> */}
+                        <label htmlFor='rating'>Rating 1-5</label>
+                        <input type='number' min='1' max='5' value={rating} onChange={(e) => setRating(e.target.value)} />
+                        {/* <input type='radio' name='rating' value={2} onChange={(e) => setRating(e.target.value)} />
+                        <input type='radio' name='rating' value={3} onChange={(e) => setRating(e.target.value)} />
+                        <input type='radio' name='rating' value={4} onChange={(e) => setRating(e.target.value)} />
+                        <input type='radio' name='rating' value={5} onChange={(e) => setRating(e.target.value)} />
+                        </fieldset> */}
                         <button type='submit' >Submit Voyage</button>
                     </form>
                 </div>
