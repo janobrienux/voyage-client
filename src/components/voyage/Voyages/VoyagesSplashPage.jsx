@@ -22,7 +22,7 @@ const VoyagesSplashPage = (props) => {
                 'Content-Type': 'application/json',
                 'Authorization': props.token
             })
-        }) .then((res) => res.json())
+        }).then((res) => res.json())
         .then((logData) => {
             setVoyages(logData)
         })
@@ -46,10 +46,11 @@ const VoyagesSplashPage = (props) => {
     }, [])
 
     return (
-            <Container>
+        <Container>
+        <VoyageTable />
                 <Row>
                     <Col md="3">
-                      {/*<PostVoyage fetchVoyages={fetchVoyages} token={props.token}/>*/}
+                      <PostVoyage fetchVoyages={fetchVoyages} token={props.token}/>
                     </Col>
                     <Col md="9">
                         <VoyageTable voyages={voyages} editUpdateVoyage={editUpdateVoyage} 
@@ -58,23 +59,23 @@ const VoyagesSplashPage = (props) => {
                     {updateActive ? <VoyageEdit voyageToUpdate={voyageToUpdate}
                     updateOff={updateOff} token={props.token} fetchVoyages={fetchVoyages}/> : <></>}
                     <Col md="9">
-                      {/*<AllVoyages voyages={voyages} editUpdateVoyage={editUpdateVoyage} updateOn={updateOn} fetchVoyages={fetchVoyages}
-                        token={props.token}/>*/}
+                      <AllVoyages voyages={voyages} editUpdateVoyage={editUpdateVoyage} updateOn={updateOn} fetchVoyages={fetchVoyages}
+                        token={props.token}/>
                     </Col>
                 </Row>
             </Container>
     );
 };
 
-const VoyagesSplashPage =(props)=>{
-    
-    return(
-        <div>
-            <PostVoyage token={props.token} />
-            <AllVoyages token={props.token} />
-            <EditVoyages />
-        </div>
-    )
-}
+// const VoyagesSplashPage =(props)=>{
+  
+//     return(
+//         <div>
+//             <PostVoyage token={props.token} />
+//             <AllVoyages token={props.token} />
+//             {/* <EditVoyages /> */}
+//         </div>
+//     )
+// }
 
 export default VoyagesSplashPage;
