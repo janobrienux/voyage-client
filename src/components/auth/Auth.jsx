@@ -1,9 +1,12 @@
 import { useState } from "react";
 import "./style.css";
-import logo from '../../assets/logo.png'
+import logo from "../../assets/logo.png";
 
 const Auth = (props) => {
-  console.log(props)
+  console.log(props);
+  function signUp() {
+    alert("Login Successful");
+  }
 
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
@@ -22,12 +25,11 @@ const Auth = (props) => {
           password: password,
         }
       : {
-        user:{
-
-          userName: userName,
-          email: email,
-          password: password,
-        }
+          user: {
+            userName: userName,
+            email: email,
+            password: password,
+          },
         };
 
     fetch(url, {
@@ -38,8 +40,9 @@ const Auth = (props) => {
       body: JSON.stringify(bodyObj),
     })
       .then((res) => res.json())
-                    //**** CHANGED TO TERNARY TO SET TOKEN!!!! */
-      .then((data) => login ? props.updateToken(data.token) : undefined);
+      //**** CHANGED TO TERNARY TO SET TOKEN!!!! */
+      .then(signUp())
+      .then((data) => (login ? props.updateToken(data.token) : undefined));
   };
 
   const title = () => {
@@ -70,38 +73,38 @@ const Auth = (props) => {
       <form onSubmit={handleSubmit}>
         <div className="form-img">
           <img className="element" src={logo} alt="voyage-logo" />
-        <h1>{title()}</h1>
-        {signupFields()}
-        <label htmlFor="email">Email:</label>
-        <br />
-        <input
-          type="text"
-          id="email"
-          // two-way data binding. This builds a closed circuit to display
-          value={email}
-          placeholder="Email"
-          onChange={(event) => {
-            setEmail(event.target.value);
-          }}
-        />
-        <br />
-        <label htmlFor="password">Password:</label>
-        <br />
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(event) => {
-            setPassword(event.target.value);
-          }}
-        />
-        <br />
-        <button onClick={loginToggle}>Login/Signup Toggle</button>
-        <br />
-        <button type="submit">Sign In</button>
+          <h1>{title()}</h1>
+          {signupFields()}
+          <label htmlFor="email">Email:</label>
+          <br />
+          <input
+            required
+            type="email"
+            id="email"
+            // two-way data binding. This builds a closed circuit to display
+            value={email}
+            placeholder="Email"
+            onChange={(event) => {
+              setEmail(event.target.value);
+            }}
+          />
+          <br />
+          <label htmlFor="password">Password:</label>
+          <br />
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(event) => {
+              setPassword(event.target.value);
+            }}
+          />
+          <br />
+          <button onClick={loginToggle}>Login/Signup Toggle</button>
+          <br />
+          <button type="submit">Sign In</button>
         </div>
       </form>
-
     </div>
   );
 };
