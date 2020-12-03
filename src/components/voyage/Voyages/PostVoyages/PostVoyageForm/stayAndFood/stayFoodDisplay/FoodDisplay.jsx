@@ -14,7 +14,7 @@ const FoodDisplay = (props) => {
                     <ListGroup className='listGroup' horizontal>
                         <ListGroupItem className='resaurantName' tag='h4'>{result.restaurant.name}</ListGroupItem>
                         <ListGroupItem tag='p'>Cuisines: {result.restaurant.cuisines}</ListGroupItem>                    
-                        <ListGroupItem tag='a' className='menu' href={result.restaurant.menu_url} target='_blank'><u>Menu</u></ListGroupItem>                    
+                        <ListGroupItem id='menu' tag='a' className='menu' href={result.restaurant.menu_url} target='_blank'><u>Menu</u></ListGroupItem>                    
                         <ListGroupItem tag='p'>Average Rating:{result.restaurant.user_rating.aggregate_rating}</ListGroupItem>
                     </ListGroup>
                 </div>
