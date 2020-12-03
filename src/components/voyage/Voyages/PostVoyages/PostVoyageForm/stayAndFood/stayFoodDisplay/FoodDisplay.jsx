@@ -10,12 +10,12 @@ const FoodDisplay = (props) => {
         return props.foodResults.length > 0 ?
             props.foodResults.map((result, index) => {
                 console.log(result.restaurant)
-                return <div key={index} className='recommendResults'>
+                return <div key={index}>
                     <ListGroup className='listGroup' horizontal>
                         <ListGroupItem className='resaurantName' tag='h4'>{result.restaurant.name}</ListGroupItem>
-                        <ListGroupItem>{result.restaurant.cuisines}</ListGroupItem>                    
-                        <ListGroupItem tag='a' className='menu' href={result.restaurant.menu_url} target='_blank'><u>Menu</u></ListGroupItem>                    
-                        <ListGroupItem>User Rating:{result.restaurant.user_rating.aggregate_rating}</ListGroupItem>
+                        <ListGroupItem tag='p'>Cuisines: {result.restaurant.cuisines}</ListGroupItem>                    
+                        <ListGroupItem id='menu' tag='a' className='menu' href={result.restaurant.menu_url} target='_blank'><u>Menu</u></ListGroupItem>                    
+                        <ListGroupItem tag='p'>Average Rating:{result.restaurant.user_rating.aggregate_rating}</ListGroupItem>
                     </ListGroup>
                 </div>
             })

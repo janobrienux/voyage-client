@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Voyage from './Voyage';
 import EditForm from './EditForm';
+import {Button} from 'reactstrap';
 
 const AllVoyages = (props) => {
     const [voyages, setVoyages] = useState([]);
@@ -47,8 +48,8 @@ const AllVoyages = (props) => {
     return (
         <div>
             <div>
-                <button onClick={(e) => voyageBtn(e)}>Voyage!</button>
-                {voyages.length === 0 ? null : <><Voyage voyages={voyages} editUpdateVoyage={editUpdateVoyage} updateOn={updateOn} updateOff={updateOff} fetchResults={fetchResults} token={props.token} /><button onClick={(e) => closeVoyages(e)}>Close Voyages</button></>}
+                <Button id='button' onClick={(e) => voyageBtn(e)}>Voyage!</Button>
+                {voyages.length === 0 ? null : <><Voyage voyages={voyages} editUpdateVoyage={editUpdateVoyage} updateOn={updateOn} updateOff={updateOff} fetchResults={fetchResults} token={props.token} /><button id='button' onClick={(e) => closeVoyages(e)}>Close Voyages</button></>}
                 {updateActive ? <EditForm voyages={voyages} voyageToUpdate={voyageToUpdate} token={props.token} updateOff={updateOff} fetchResults={fetchResults} /> : <></>}
             </div>
         </div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import AllVoyages from './GetVoyages/AllVoyages';
 import PostSearchVoyage from './PostVoyages/PostSearchVoyage';
 import {Button} from 'reactstrap'
+import './VoyagesSplashPage.css'
 
 const VoyagesSplashPage = (props) => {
     const [voyageForm, setVoyageForm] = useState(undefined)
@@ -18,8 +19,8 @@ const VoyagesSplashPage = (props) => {
 
     const displayVoyageForm =()=>{
         return voyageForm === undefined ?
-            (<Button onClick={(e)=>postVoyageBtnClick(e)} >Create a Voyage!</Button>)
-                : (<><PostSearchVoyage token={props.token} /><Button onClick={(e)=>closeForm(e)}>Close Form</Button></>)
+            (<Button id='button' onClick={(e)=>postVoyageBtnClick(e)} >Create a Voyage!</Button>)
+                : (<><PostSearchVoyage token={props.token} closeForm={closeForm} /><Button id='button' onClick={(e)=>closeForm(e)}>Close Form</Button></>)
     }
 
     return (
