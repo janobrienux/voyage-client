@@ -64,7 +64,9 @@ const Auth = (props) => {
       </div>
     ) : null;
   };
-
+function signUp() {
+  alert('User registered!')
+}
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit}>
@@ -96,9 +98,10 @@ const Auth = (props) => {
           }}
         />
         <br />
-        <button onClick={loginToggle}>Login/Signup Toggle</button>
+        <button onClick={loginToggle}>Sign up</button>
+   
         <br />
-        <button type="submit">Sign In</button>
+        <button type="submit">Login</button>
         </div>
       </form>
 
