@@ -17,11 +17,11 @@ const Voyage = (props) => {
             return (
                 <div key={index}>
                     <div>
-                        <p>{voyage.location}</p>
-                        <p>{voyage.season}</p>
-                        <p>{voyage.stay}</p>
-                        <p>{voyage.food}</p>
-                        <p>{voyage.rating}</p>
+                        <h4>Voyage: {voyage.location}</h4>
+                        <p>Season: {voyage.season}</p>
+                        <p>Accommodations: {voyage.stay}</p>
+                        <p>Restaurants: {voyage.food}</p>
+                        <p>Desire Rating: {voyage.rating}</p>
                         <Button color="warning" 
                             onClick={
                                 (e) => {

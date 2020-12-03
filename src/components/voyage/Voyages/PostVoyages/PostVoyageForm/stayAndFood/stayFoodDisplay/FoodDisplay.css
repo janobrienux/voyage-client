@@ -4,21 +4,10 @@
         justify-content: space-evenly;
 }
 
-.recommendResults {
-    width: 7em;
-    height: 7em;
-    background: red;
-    margin: 5px 5px 5px 5px;
-    display: flex;
-    justify-content: center;
-        text-align: center;
-        align-items: center;;
-}
-
 .listGroup {
-    background-color: gray;
-    height: 7em;
-    width: 7em;
+    background-color: lightgray;
+    font-size: 14px;
+    color: black;
     display: flex;
         justify-content: center;
         flex-direction: column;
