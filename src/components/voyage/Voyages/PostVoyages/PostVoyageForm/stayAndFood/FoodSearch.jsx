@@ -34,7 +34,7 @@ const SearchFood = (props) => {
         <div>
             <FoodDisplay foodResults={foodResults} />
             <br/>
-            <button onClick={(e) => submitFoodSearch(e)}>Search Restaurants</button>
+            <button onClick={(e) => submitFoodSearch(e)}>Restaurants Recommendations</button>
         </div>
     )
 }

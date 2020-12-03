@@ -1,24 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+
 .restaurantList {
     display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
-}
-
-.recommendResults {
-    width: 7em;
-    height: 7em;
-    background: red;
-    margin: 5px 5px 5px 5px;
-    display: flex;
-    justify-content: center;
-        text-align: center;
-        align-items: center;;
+        font-family: "Inconsolata", monospace;
 }
 
 .listGroup {
-    background-color: gray;
-    height: 7em;
-    width: 7em;
+    background-color: #22577a;
+    font-size: 14px;
+    color: white;
     display: flex;
         justify-content: center;
         flex-direction: column;
@@ -27,4 +19,8 @@
 
 .resaurantName {
     margin: 0;
+}
+
+#menu {
+   color: #ff5757;
 }
