@@ -40,6 +40,11 @@ const PostSearchVoyage = (props) => {
         e.preventDefault();
         locationResults();
     }
+    
+    const cancelVoyage =(e)=>{
+        e.preventDefault()
+        setLat('')
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -53,19 +58,11 @@ const PostSearchVoyage = (props) => {
         }).then((res) => res.json())
             .then((postVoyage) => {
                 console.log(postVoyage);
-                setLocation('');
-                setSeason('');
-                setStay('');
-                setFood('');
-                setRating(3);
+                props.closeForm(e)
             })
     }
 
-    const cancelVoyage =(e)=>{
-        e.preventDefault()
-        setLat('')
-    }
-
+    
     if (lat === '') {
         return (
             <div>
@@ -94,13 +91,13 @@ const PostSearchVoyage = (props) => {
                             <option value='winter'>Winter</option>
                             <option value='spring'>Spring</option>
                         </select>
-                        <label htmlFor='stay'>Stay</label>
+                        <label htmlFor='stay'>Accommodations</label>
                         <input name='stay' value={stay} onChange={(e) => setStay(e.target.value)} />
-                        <label htmlFor='food'>Food</label>
+                        <label htmlFor='food'>Restaurants</label>
                         <input name='food' value={food} onChange={(e) => setFood(e.target.value)} />
                         <SearchFood lat={lat} lon={lon} name='food' />
                         {/* <fieldset> */}
-                        <label htmlFor='rating'>Rating 1-5</label>
+                        <label htmlFor='rating'>Desire Rating: 1-5</label>
                         <input type='number' min='1' max='5' value={rating} onChange={(e) => setRating(e.target.value)} />
                         {/* <input type='radio' name='rating' value={2} onChange={(e) => setRating(e.target.value)} />
                         <input type='radio' name='rating' value={3} onChange={(e) => setRating(e.target.value)} />
