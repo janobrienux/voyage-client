@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SearchFood from './PostVoyageForm/stayAndFood/FoodSearch';
+import APIURL from '../../../../helpers/environment';
 
 const otmBaseURl = 'https://api.opentripmap.com/0.1/en/places/geoname?name=';
 const key = '5ae2e3f221c38a28845f05b641e40fe3f97e6a2c4cffeb533255daa6';
@@ -48,7 +49,7 @@ const PostSearchVoyage = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:3050/voyage/createlog', {
+        fetch(`${APIURL}/voyage/createlog`, {
             method: 'POST',
             body: JSON.stringify({ location, season, stay, food, rating }),
             headers: new Headers({
