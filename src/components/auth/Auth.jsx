@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./style.css";
-import logo from "../../assets/logo.png";
+import logo from '../../assets/logo.png'
+import APIURL from '../../helpers/environment';
 
 const Auth = (props) => {
   console.log(props);
@@ -17,7 +18,7 @@ const Auth = (props) => {
     // stops browser from refreshing when form is submitted
     event.preventDefault();
     // sets up value of the url depending on if logging in or signing up
-    const url = login ? "http://localhost:3050/user/login" : "http://localhost:3050/user/register";
+    const url = login ? `${APIURL}/user/login` : `${APIURL}/user/register`;
     // sets up value of the data we are going to send to the enpoint of the url nased on login value
     const bodyObj = login
       ? {
