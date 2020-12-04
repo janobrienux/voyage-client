@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {Button, Form, FormGroup, Label, Input /*Modal, ModalHeader, ModalBody*/} from 'reactstrap';
-
+import APIURL from '../../../../helpers/environment';
 
 const EditForm = (props) => {
 
@@ -13,7 +13,7 @@ const EditForm = (props) => {
 
     const updateVoyage = (e) => {
         e.preventDefault();
-        fetch(`http://localhost:3050/voyage/update/${props.voyageToUpdate.id}`, {
+        fetch(`${APIURL}/voyage/update/${props.voyageToUpdate.id}`, {
             method: 'PUT',
             body: JSON.stringify({location: editLocation, season: editSeason, stay: editStay, food: editFood, rating: editRating}),
             headers: new Headers ({

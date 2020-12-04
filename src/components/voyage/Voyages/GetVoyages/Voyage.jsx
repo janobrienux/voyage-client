@@ -1,11 +1,12 @@
+import { Button } from "reactstrap";
+import APIURL from '../../../../helpers/environment';
 // import 'bootstrap/dist/css/bootstrap.min.css'
-import {Button} from 'reactstrap'
 // import { Button, Card, CardBody, CardText, CardHeader, CardFooter } from "reactstrap";
 
 const Voyage = (props) => {
 
     const deleteVoyage = (voyage) => {
-        fetch(`http://localhost:3050/voyage/delete/${voyage.id}`, {
+        fetch(`${APIURL}/voyage/delete/${voyage.id}`, {
             method: "DELETE",
             headers: new Headers({
                 "Content-Type": "application/json",

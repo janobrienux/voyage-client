@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Voyage from './Voyage';
 import EditForm from './EditForm';
+import APIURL from '../../../../helpers/environment';
 import {Button} from 'reactstrap';
 
 const AllVoyages = (props) => {
@@ -10,7 +11,7 @@ const AllVoyages = (props) => {
     console.log('AllVoyages Token:', props.token)
 
     const fetchResults = () => {
-        fetch('http://localhost:3050/voyage/getlogs', {
+        fetch(`${APIURL}/voyage/getlogs`, {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -38,7 +39,6 @@ const AllVoyages = (props) => {
     const updateOff = () => {
         setUpdateActive(false);
     }
-
 
     const closeVoyages = (e) => {
         e.preventDefault();

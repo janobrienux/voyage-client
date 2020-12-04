@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Button, Form, FormGroup, Label, Input} from 'reactstrap';
+import APIURL from '../../../../../helpers/environment';
 // import TestInput from './Test'
 
 const PostForm =(props)=>{
@@ -12,7 +13,7 @@ const PostForm =(props)=>{
 
     const handleSubmit =(e)=>{
         e.preventDefault();
-        fetch('http://localhost:3050/voyage/createlog',{
+        fetch(`${APIURL}/voyage/createlog`,{
             method: 'POST',
             body: JSON.stringify({location, season, stay, food, rating}),
             headers: new Headers({
