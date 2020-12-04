@@ -68,7 +68,7 @@ const PostSearchVoyage = (props) => {
         return (
             <div>
                 <form>
-                <label htmlFor='locationSearch'>Search Location</label>
+                <label htmlFor='locationSearch'>Voyage Destination:</label>
                 <input name='locationSearch' onChange={(e) => setLocationSearch(e.target.value)} />
                 <button onClick={(e) => searchLocation(e)}>Voyage!!!</button>
                 </form>
