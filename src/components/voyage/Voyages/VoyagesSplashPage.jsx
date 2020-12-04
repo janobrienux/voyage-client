@@ -32,3 +32,4 @@ const VoyagesSplashPage = (props) => {
 }
 
 export default VoyagesSplashPage;
+
