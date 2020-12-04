@@ -74,7 +74,7 @@ const Auth = (props) => {
         {signupFields()}
         <label htmlFor="email">Email:</label>
         <br />
-        <input
+        <input required
           type="text"
           id="email"
           // two-way data binding. This builds a closed circuit to display
